@@ -1,0 +1,13 @@
+
+<html>
+  <body>
+    <div>iframe</div>
+    <div id="displayhere"></div>
+  </body>
+  <script>
+    window.onmessage = (event) => {
+      document.getElementById("displayhere").innerHTML = event.data;
+    };
+    window.top.postMessage("fromIframe", "*");
+  </script>
+</html>
